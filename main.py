@@ -41,6 +41,11 @@ def main() -> None:
         with open(out_path, "w", encoding="utf-8", newline="") as f:
             f.write(CONFESSION)
 
+    with open(out_path, "r", encoding="utf-8", newline="") as f:
+        written = f.read()
+    assert written == CONFESSION, "entry.txt does not match CONFESSION"
+    print(f"Verified: entry.txt matches CONFESSION ({len(CONFESSION)} characters)")
+
     print(CONFESSION)
     print(f"Characters: {len(CONFESSION)}")
     print(f"Wrote {out_path}")
